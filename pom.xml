@@ -13,6 +13,8 @@
     </properties>
     <modules>
         <module>fast-summary-tx-invalid</module>
+        <module>fast-summary-cyclic-dependence</module>
+        <module>fast-summary-jvm</module>
     </modules>
     <dependencyManagement>
         <dependencies>

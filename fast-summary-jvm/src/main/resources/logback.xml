@@ -1,0 +1,104 @@
+<configuration>
+
+    <!--<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%highlight([%level])  %black([%thread]) - %msg %n</pattern>
+        </encoder>
+    </appender>-->
+
+    <appender name="boldRed" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%highlight([%level])  %boldRed([%thread]) - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="boldBlue" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%highlight([%level])  %boldBlue([%thread]) - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="boldGreen" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%highlight([%level])  %boldGreen([%thread]) - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="boldYellow" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%highlight([%level])  %boldYellow([%thread]) - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="boldMagenta" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%highlight([%level])  %boldMagenta([%thread]) - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="boldCyan" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%highlight([%level])  %boldCyan([%thread]) - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="boldWhite" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%highlight([%level])  %boldWhite([%thread]) - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.classic.sift.SiftingAppender">
+        <discriminator>
+            <key>thread</key>
+            <defaultValue>cyan</defaultValue>
+        </discriminator>
+        <sift>
+            <appender name="thread-${thread}" class="ch.qos.logback.core.ConsoleAppender">
+                <encoder>
+                    <pattern>%highlight([%level])  %black([%thread]) - %${thread}(%msg) %n</pattern>
+                </encoder>
+            </appender>
+        </sift>
+    </appender>
+
+    <logger name="org.springframework.jdbc.datasource.DataSourceTransactionManager" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <logger name="com.example.tx.invalid.app" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <logger name="A" level="DEBUG" additivity="false">
+        <appender-ref ref="boldRed"/>
+    </logger>
+
+    <logger name="B" level="DEBUG" additivity="false">
+        <appender-ref ref="boldBlue"/>
+    </logger>
+
+    <logger name="C" level="DEBUG" additivity="false">
+        <appender-ref ref="boldGreen"/>
+    </logger>
+
+    <logger name="D" level="DEBUG" additivity="false">
+        <appender-ref ref="boldYellow"/>
+    </logger>
+
+    <logger name="E" level="DEBUG" additivity="false">
+        <appender-ref ref="boldMagenta"/>
+    </logger>
+
+    <logger name="F" level="DEBUG" additivity="false">
+        <appender-ref ref="boldCyan"/>
+    </logger>
+
+    <logger name="G" level="DEBUG" additivity="false">
+        <appender-ref ref="boldWhite"/>
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
