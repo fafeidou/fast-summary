@@ -21,7 +21,8 @@ public class TestOomThreadPool {
 //        fixedThreadPool();
 //        singleThreadExecutor();
 //        cachedThreadPool();
-        scheduledThreadPool();
+//        scheduledThreadPool();
+          newWorkStealingPool();
     }
 
 
@@ -76,6 +77,21 @@ public class TestOomThreadPool {
 
     private static void scheduledThreadPool() {
         ExecutorService executor = Executors.newScheduledThreadPool(2);
+        LoggerUtils.get().debug("begin...");
+        while (true) {
+            executor.submit(() -> {
+                try {
+                    LoggerUtils.get().debug("send sms...");
+                    TimeUnit.SECONDS.sleep(30);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+    }
+
+    private static void newWorkStealingPool() {
+        ExecutorService executor = Executors.newWorkStealingPool(2);
         LoggerUtils.get().debug("begin...");
         while (true) {
             executor.submit(() -> {
