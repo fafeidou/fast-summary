@@ -12,16 +12,16 @@ import java.util.concurrent.TimeUnit;
 
 import static com.sun.deploy.util.BufferUtil.MB;
 
-// -Xmx8m
+// -Xmx8m  -XX:-UseGCOverheadLimit
 public class TestOomThreadPool {
     public static void main(String[] args) {
         MemoryMXBean memory = ManagementFactory.getMemoryMXBean();
         MemoryUsage headMemory = memory.getHeapMemoryUsage();
         System.out.println("\t最大(上限)(M):"+headMemory.getMax()/MB);
-        fixedThreadPool();
+//        fixedThreadPool();
 //        singleThreadExecutor();
 //        cachedThreadPool();
-//        scheduledThreadPool();
+        scheduledThreadPool();
     }
 
 
