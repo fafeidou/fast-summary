@@ -7,7 +7,7 @@ import static com.fast.summary.jvm.utils.LoggerUtils.main;
 public class TestThreadState {
     static final Object LOCK = new Object();
     public static void main(String[] args) throws InterruptedException {
-        testWaiting();
+        testBlocked();
     }
 
     private static void testWaiting() {

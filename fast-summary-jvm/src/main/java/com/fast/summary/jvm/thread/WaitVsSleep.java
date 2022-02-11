@@ -51,9 +51,9 @@ public class WaitVsSleep {
         t1.start();
 
         Thread.sleep(100);
-        t1.interrupt();
-        /*synchronized (LOCK) {
+//        t1.interrupt();
+        synchronized (LOCK) {
             main.debug("other...");
-        }*/
+        }
     }
 }
