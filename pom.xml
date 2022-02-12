@@ -15,6 +15,7 @@
         <module>fast-summary-tx-invalid</module>
         <module>fast-summary-cyclic-dependence</module>
         <module>fast-summary-jvm</module>
+        <module>fast-summary-sort</module>
     </modules>
     <dependencyManagement>
         <dependencies>
