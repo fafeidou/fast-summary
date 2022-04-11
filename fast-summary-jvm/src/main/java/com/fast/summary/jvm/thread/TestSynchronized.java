@@ -22,7 +22,7 @@ public class TestSynchronized {
         Number n2 = new Number();
         new Thread(()->{
             try {
-                n1.a();
+                Number.a();
 //                Number.a();
             } catch (InterruptedException e) {
                 e.printStackTrace();
