@@ -17,6 +17,7 @@
         <module>fast-summary-jvm</module>
         <module>fast-summary-sort</module>
         <module>fast-summary-canal</module>
+        <module>fast-summary-netty</module>
     </modules>
     <dependencyManagement>
         <dependencies>
